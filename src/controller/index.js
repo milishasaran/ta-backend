@@ -1,5 +1,6 @@
 const { hashPassword, verifyPassword } = require("../helpers");
 const User = require("../models/index");
+const jwt = require('jsonwebtoken')
 
 exports.userLogin = async (req, res) => {
   try {
@@ -17,8 +18,12 @@ exports.userLogin = async (req, res) => {
         message: "Incorrect password",
       });
     }
+
+    const accessToken = jwt.sign({userID: user._id}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "1d"})
+  
     return res.status(200).json({
       user,
+      accessToken,
       message: "Login Successful",
     });
   } catch (err) {
