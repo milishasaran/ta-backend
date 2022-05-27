@@ -1,0 +1,19 @@
+{
+  "name": "techalchemy-assignment",
+  "version": "1.0.0",
+  "description": "backendnd for news weather assignment.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.20.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4"
+  }
+}
