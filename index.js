@@ -1,10 +1,20 @@
+require('dotenv').config()
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const weatherData = require('./src/app/weather')
 const news = require('./src/app/news')
 
 const express = require('express')
 const app = express()
 app.use(express.json())
+app.use(bodyParser.json())
 const port = process.env.PORT != null ? process.env.PORT : 3000
+
+mongoose.connect(process.env.MONGO_URI).then(()=>{
+  console.log("DB Connected!")
+}).catch((error)=>{
+  console.log(error)
+})
 
 app.get('/', async function (req, res) {
   res.send('Welcome to the news and weather API')
