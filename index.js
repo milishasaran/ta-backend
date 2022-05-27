@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const weatherData = require('./src/app/weather')
 const news = require('./src/app/news')
+const userRoutes = require('./src/routes/index')
 
 const express = require('express')
 const app = express()
@@ -15,6 +16,8 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
 }).catch((error)=>{
   console.log(error)
 })
+
+app.use(userRoutes)
 
 app.get('/', async function (req, res) {
   res.send('Welcome to the news and weather API')

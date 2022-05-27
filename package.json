@@ -4,13 +4,14 @@
   "description": "backendnd for news weather assignment.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
