@@ -1,15 +1,26 @@
 # news-weather-api
-This api fetches news and weather data.
-Also, it has added support for user login and signup using a JSON file.
 
-## prerequisite
-- node(v10 or above)
+This is a server which provides the data for daily news and weather to the authenticated users.
 
-## setup
-- go to the root directory
-- run ```npm i```
+# Tech stack
 
-## how to run
-- for dev environment
-    - ```npm run start```
+Runtime - NodeJS
+Database - MongoDB
+ORM - Mongoose
+Routing - Express
 
+## Signup customers
+
+This api accepts email and password, then checks if the email already then store the email and encrypted password in mongoDB database.
+
+## Login customers
+
+This api accepts email and password, checks if the email already exists in the database, then verifies the password and returns the userdata and access token for authorization.
+
+# Weather API
+
+This is a third party API service which provides the weather data, which we return to client which are authorized.
+
+# News API
+
+This is a third party API service which provides the news data, which we return to client which are authorized.

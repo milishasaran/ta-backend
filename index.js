@@ -1,5 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const weatherData = require("./src/app/weather");
 const news = require("./src/app/news");
@@ -10,6 +11,7 @@ const { authenticatorToken } = require("./src/controller/auth");
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(cors());
 const port = process.env.PORT != null ? process.env.PORT : 3000;
 
 mongoose
