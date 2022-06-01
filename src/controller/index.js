@@ -2,6 +2,10 @@ const { hashPassword, verifyPassword } = require("../helpers");
 const User = require("../models/index");
 const jwt = require("jsonwebtoken");
 
+/*Check to see email in DB. 
+If yes, decrypt password from DB and compare with password from client.
+Then set access token and send data to UI
+*/
 exports.userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -39,6 +43,10 @@ exports.userLogin = async (req, res) => {
   }
 };
 
+/*Retrieve email and password from request body.
+Hash the password using a helper function
+Save the user ID and password in the DB.
+Send success message*/
 exports.userSignUp = async (req, res) => {
   try {
     const { email, password } = req.body;

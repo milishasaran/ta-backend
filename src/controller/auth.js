@@ -1,3 +1,7 @@
+/*Fetch auth data from request (if available, else throw error)
+Check if access token points to the particular user
+If yes, allow access, else throw error
+ */
 exports.authenticatorToken = (req, res, next) => {
   try {
     const isToken =
